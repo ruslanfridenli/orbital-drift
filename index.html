@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orbital Drift — N-Body Gravity Sandbox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>◉ orbital drift</h1>
+  <nav class="lang">
+    <button data-lang="en" class="on">EN</button><button data-lang="de">DE</button>
+  </nav>
+</header>
+<main>
+  <aside class="panel">
+    <section>
+      <h2 data-i="presets">Presets</h2>
+      <div class="btncol">
+        <button data-preset="binary" data-i="p_binary">Binary star</button>
+        <button data-preset="solar" data-i="p_solar">Solar system</button>
+        <button data-preset="disc" data-i="p_disc">Accretion disc</button>
+        <button data-preset="swarm" data-i="p_swarm">Random swarm</button>
+      </div>
+    </section>
+    <section>
+      <h2 data-i="controls">Controls</h2>
+      <div class="btncol">
+        <button id="btn-pause" data-i="pause">Pause</button>
+        <button id="btn-clear" data-i="clear">Clear</button>
+        <button id="btn-body" data-i="addbody">+ Add body</button>
+      </div>
+    </section>
+    <section>
+      <h2 data-i="params">Parameters</h2>
+      <label>G <span id="g-val">1.0</span>
+        <input type="range" id="g" min="0.1" max="3" step="0.05" value="1"></label>
+      <label><span data-i="timescale">Time scale</span> <span id="t-val">1.0</span>
+        <input type="range" id="ts" min="0.1" max="4" step="0.1" value="1"></label>
+      <label><span data-i="trails">Trails</span> <span id="tr-val">60</span>
+        <input type="range" id="tr" min="0" max="200" step="10" value="60"></label>
+      <label class="check"><input type="checkbox" id="collide" checked> <span data-i="collide">Collisions</span></label>
+    </section>
+    <section class="stats"><span id="count">0</span> <span data-i="bodies">bodies</span></section>
+  </aside>
+  <canvas id="cv"></canvas>
+</main>
+<footer><span data-i="hint">Click on the canvas to launch a body · drag to give it velocity</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
